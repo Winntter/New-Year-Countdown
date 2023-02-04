@@ -5,13 +5,13 @@ const secondsNumEl = document.querySelector("#seconds-number");
 
 //                 Programming Logic
 
-const newYear = "01-01-2024"
+const newYear = "01-01-2024";
 
 function countdown() {
     const actualDate = new Date();
     const newYearDate = new Date(newYear);
 
-    const base = Math.floor((actualDate - newYearDate) / 1000); // Transform MS to Seconds
+    const base = Math.floor((newYearDate - actualDate) / 1000); // Transform MS to Seconds
 
     const days = Math.floor(base / 3600 / 24);
     const hours = Math.floor(base / 3600) % 24;
@@ -23,7 +23,6 @@ function countdown() {
     minutesNumEl.innerHTML = minutes < 10 ? `0${minutes}` : minutes;
     secondsNumEl.innerHTML = seconds < 10 ? `0${seconds}` : seconds;
 
-    
 }
 
 setInterval(countdown, 1000);
